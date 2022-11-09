@@ -95,20 +95,9 @@ class ContentResolverHelper(context: Context) {
     }
 
     /**
-     * 커스텀 메서드 - id 가져오기
+     * 커스텀 메서드
      */
-    fun buildingDataBaseOfGiverApp(): String? {
-        var value: String? = null
-
-        val bundle: Bundle? = contentResolver.call(ReceiverContract.CONTENT_URI, "getId", null, null)
-
-        bundle?.let {
-
-            val id = it.getString("id")
-            Log.v(">>>", "customMethodGetId : $id")
-            value = id
-        }
-
-        return value
+    fun buildingDataBaseOfGiverApp(){
+        contentResolver.call(ReceiverContract.CONTENT_URI, "", null, null)
     }
 }
